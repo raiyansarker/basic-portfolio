@@ -6,7 +6,7 @@
 
 .spinner div {
   animation: spinner 1.2s linear infinite;
-  background: gray;
+  background: var(--spinner-color, gray);
   position: absolute;
   border-radius: 1rem;
   width: 30%;
