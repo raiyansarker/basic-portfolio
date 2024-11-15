@@ -1,3 +1,4 @@
+import { Confetti } from "@/components/confetti";
 import {
   Bars3Icon,
   CheckBadgeIcon,
@@ -26,62 +27,64 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={font.className}>
-        <div className="grid grid-cols-1 md:grid-cols-[minmax(min-content,25%),1fr] lg:mx-auto lg:w-[80vw] lg:border-x lg:dark:border-white/20">
-          <div className="hidden border-r md:block dark:border-white/20">
-            <ul className="grid grid-cols-1">
-              {Array(7)
-                .fill({})
-                .map((_, index) => (
-                  <li
-                    key={index}
-                    className="grid grid-cols-[theme(spacing[12]),1fr] items-center gap-x-4 border-b px-4 py-6 dark:border-white/20"
-                  >
-                    <div className="size-12 animate-pulse rounded-full bg-gray-950/10 dark:bg-white/10" />
-                    <div className="w-full space-y-2">
-                      <div className="h-4 w-[95%] animate-pulse rounded-md bg-gray-950/10 dark:bg-white/10" />
-                      <div className="h-4 w-[70%] animate-pulse rounded-md bg-gray-950/10 dark:bg-white/10" />
-                    </div>
-                  </li>
-                ))}
-            </ul>
-          </div>
-          <div className="relative grid h-full min-h-svh grid-rows-[theme(spacing[16]),1fr]">
-            <header className="sticky top-0 z-10 grid grid-cols-[theme(spacing[6]),1fr,theme(spacing[6])] grid-rows-1 content-center gap-x-4 border-b bg-background px-6 py-3 dark:border-white/20">
-              <button>
-                <Bars3Icon className="size-6 stroke-2" />
-              </button>
-              <div className="flex items-center gap-x-3">
-                <Image
-                  src="https://avatars.githubusercontent.com/u/38852396?v=4"
-                  alt="Raiyan"
-                  width={200}
-                  height={200}
-                  className="size-11 rounded-full"
-                />
-                <div className="space-y-1">
-                  <h1 className="flex items-center gap-x-2 text-lg font-semibold leading-none">
-                    Raiyan Sarker
-                    <span>
-                      <CheckBadgeIcon className="size-5" />
-                    </span>
-                  </h1>
-                  <p className="text-sm leading-none text-gray-950/70 dark:text-white/50">
-                    Online
-                  </p>
+        <Confetti>
+          <div className="grid grid-cols-1 md:grid-cols-[minmax(min-content,25%),1fr] lg:mx-auto lg:w-[80vw] lg:border-x lg:dark:border-white/20">
+            <div className="hidden border-r md:block dark:border-white/20">
+              <ul className="grid grid-cols-1">
+                {Array(7)
+                  .fill({})
+                  .map((_, index) => (
+                    <li
+                      key={index}
+                      className="grid grid-cols-[theme(spacing[12]),1fr] items-center gap-x-4 border-b px-4 py-6 dark:border-white/20"
+                    >
+                      <div className="size-12 animate-pulse rounded-full bg-gray-950/10 dark:bg-white/10" />
+                      <div className="w-full space-y-2">
+                        <div className="h-4 w-[95%] animate-pulse rounded-md bg-gray-950/10 dark:bg-white/10" />
+                        <div className="h-4 w-[70%] animate-pulse rounded-md bg-gray-950/10 dark:bg-white/10" />
+                      </div>
+                    </li>
+                  ))}
+              </ul>
+            </div>
+            <div className="relative grid h-full min-h-svh grid-rows-[theme(spacing[16]),1fr]">
+              <header className="sticky top-0 z-10 grid grid-cols-[theme(spacing[6]),1fr,theme(spacing[6])] grid-rows-1 content-center gap-x-4 border-b bg-background px-6 py-3 dark:border-white/20">
+                <button>
+                  <Bars3Icon className="size-6 stroke-2" />
+                </button>
+                <div className="flex items-center gap-x-3">
+                  <Image
+                    src="https://avatars.githubusercontent.com/u/38852396?v=4"
+                    alt="Raiyan"
+                    width={200}
+                    height={200}
+                    className="size-11 rounded-full"
+                  />
+                  <div className="space-y-1">
+                    <h1 className="flex items-center gap-x-2 text-lg font-semibold leading-none">
+                      Raiyan Sarker
+                      <span>
+                        <CheckBadgeIcon className="size-5" />
+                      </span>
+                    </h1>
+                    <p className="text-sm leading-none text-gray-950/70 dark:text-white/50">
+                      Online
+                    </p>
+                  </div>
                 </div>
-              </div>
-              <Link
-                href="/contact"
-                className="inline-grid place-items-center"
-                title="Contact Me"
-              >
-                <span className="sr-only">Go to contact page</span>
-                <EnvelopeIcon className="size-6 stroke-2" />
-              </Link>
-            </header>
-            {children}
+                <Link
+                  href="/contact"
+                  className="inline-grid place-items-center"
+                  title="Contact Me"
+                >
+                  <span className="sr-only">Go to contact page</span>
+                  <EnvelopeIcon className="size-6 stroke-2" />
+                </Link>
+              </header>
+              {children}
+            </div>
           </div>
-        </div>
+        </Confetti>
       </body>
     </html>
   );
