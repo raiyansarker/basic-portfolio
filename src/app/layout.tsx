@@ -1,9 +1,9 @@
-import type { Metadata } from "next";
 import {
   Bars3Icon,
   CheckBadgeIcon,
   EnvelopeIcon,
 } from "@heroicons/react/24/outline";
+import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
@@ -26,46 +26,46 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={font.className}>
-        <div className="grid lg:w-[80vw] lg:border-x lg:dark:border-white/20 lg:mx-auto md:grid-cols-[minmax(min-content,25%),1fr] grid-cols-1">
-          <div className="hidden md:block border-r dark:border-white/20">
+        <div className="grid grid-cols-1 md:grid-cols-[minmax(min-content,25%),1fr] lg:mx-auto lg:w-[80vw] lg:border-x lg:dark:border-white/20">
+          <div className="hidden border-r md:block dark:border-white/20">
             <ul className="grid grid-cols-1">
               {Array(7)
                 .fill({})
                 .map((_, index) => (
                   <li
                     key={index}
-                    className="px-4 py-6 grid grid-cols-[theme(spacing[12]),1fr] items-center gap-x-4 border-b dark:border-white/20"
+                    className="grid grid-cols-[theme(spacing[12]),1fr] items-center gap-x-4 border-b px-4 py-6 dark:border-white/20"
                   >
-                    <div className="size-12 bg-gray-950/10 dark:bg-white/10 animate-pulse rounded-full" />
-                    <div className="space-y-2 w-full">
-                      <div className="h-4 w-[95%] bg-gray-950/10 dark:bg-white/10 animate-pulse rounded-md" />
-                      <div className="h-4 w-[70%] bg-gray-950/10 dark:bg-white/10 animate-pulse rounded-md" />
+                    <div className="size-12 animate-pulse rounded-full bg-gray-950/10 dark:bg-white/10" />
+                    <div className="w-full space-y-2">
+                      <div className="h-4 w-[95%] animate-pulse rounded-md bg-gray-950/10 dark:bg-white/10" />
+                      <div className="h-4 w-[70%] animate-pulse rounded-md bg-gray-950/10 dark:bg-white/10" />
                     </div>
                   </li>
                 ))}
             </ul>
           </div>
-          <div className="grid h-full min-h-svh relative grid-rows-[theme(spacing[16]),1fr]">
-            <header className="z-10 bg-background sticky top-0 gap-x-4 px-6 py-3 grid grid-rows-1 grid-cols-[theme(spacing[6]),1fr,theme(spacing[6])] content-center border-b dark:border-white/20">
+          <div className="relative grid h-full min-h-svh grid-rows-[theme(spacing[16]),1fr]">
+            <header className="sticky top-0 z-10 grid grid-cols-[theme(spacing[6]),1fr,theme(spacing[6])] grid-rows-1 content-center gap-x-4 border-b bg-background px-6 py-3 dark:border-white/20">
               <button>
                 <Bars3Icon className="size-6 stroke-2" />
               </button>
               <div className="flex items-center gap-x-3">
                 <Image
-                  src="https://github.com/raiyansarker.png"
+                  src="https://avatars.githubusercontent.com/u/38852396?v=4"
                   alt="Raiyan"
                   width={200}
                   height={200}
                   className="size-11 rounded-full"
                 />
                 <div className="space-y-1">
-                  <h1 className="flex items-center gap-x-2 leading-none font-semibold text-lg">
+                  <h1 className="flex items-center gap-x-2 text-lg font-semibold leading-none">
                     Raiyan Sarker
                     <span>
                       <CheckBadgeIcon className="size-5" />
                     </span>
                   </h1>
-                  <p className="leading-none text-sm text-gray-950/70 dark:text-white/50">
+                  <p className="text-sm leading-none text-gray-950/70 dark:text-white/50">
                     Online
                   </p>
                 </div>
