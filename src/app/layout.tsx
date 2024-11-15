@@ -8,6 +8,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
+import { Toaster } from "sonner";
 import "./globals.css";
 
 const font = Inter({
@@ -27,6 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={font.className}>
+        <Toaster theme="system" invert />
         <Confetti>
           <div className="grid grid-cols-1 md:grid-cols-[minmax(min-content,25%),1fr] lg:mx-auto lg:w-[80vw] lg:border-x lg:dark:border-white/20">
             <div className="hidden border-r md:block dark:border-white/20">

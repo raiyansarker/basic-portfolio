@@ -6,6 +6,7 @@ import LoadingSpinner from "@/components/loading";
 import { cn } from "@/lib/utils";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useHookFormAction } from "@next-safe-action/adapter-react-hook-form/hooks";
+import { toast } from "sonner";
 import { contactAction } from "./action";
 import { contactFormSchema } from "./schema";
 
@@ -21,6 +22,14 @@ export default function Contact() {
       onSuccess: () => {
         runAnimation();
         resetFormAndAction();
+        toast.success("Email sent successfully", {
+          description: "I'll get back to you soon!",
+        });
+      },
+      onError: () => {
+        toast.error("Failed to send email", {
+          description: "Please try again later",
+        });
       },
     },
   });

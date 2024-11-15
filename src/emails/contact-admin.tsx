@@ -10,17 +10,19 @@ import {
   Tailwind,
   Text,
 } from "@react-email/components";
+import { format } from "date-fns";
 
 const baseUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
-  : "";
+  : "http://localhost:3000";
 
-interface ContactAdminProps {
+export interface ContactAdminProps {
   firstName: string;
   lastName: string;
   email: string;
   subject: string;
   message: string;
+  date: number;
   ip: string;
 }
 
@@ -30,6 +32,7 @@ export const ContactAdmin = ({
   email,
   subject,
   message,
+  date,
   ip,
 }: ContactAdminProps) => (
   <Html>
@@ -62,6 +65,10 @@ export const ContactAdmin = ({
               <tr className="w-full">
                 <td className="font-medium">Subject</td>
                 <td>{subject}</td>
+              </tr>
+              <tr className="w-full">
+                <td className="font-medium">Sent</td>
+                <td>{format(date, "h:mm b, do MMM, yyy [z]")}</td>
               </tr>
               <tr className="w-full">
                 <td className="font-medium">IP</td>
@@ -98,6 +105,7 @@ ContactAdmin.PreviewProps = {
   email: "me@riayansarker.com",
   subject: "Query",
   message: "Hello, I have a query.",
+  date: Date.now(),
   ip: "1.1.1.1",
 } satisfies ContactAdminProps;
 
