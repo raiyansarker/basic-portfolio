@@ -28,25 +28,11 @@ const useConfettiContext = () => {
   return context;
 };
 
-export const useConfetti = ({
-  duration = 3000,
-}: { duration?: number } = {}) => {
+export const useConfetti = () => {
   const { loaded } = useConfettiContext();
-  const [startAnimation, setStartAnimation] = useState<boolean>(false);
+  let timeout: NodeJS.Timeout | undefined;
 
   useEffect(() => {
-    let timeout: NodeJS.Timeout;
-
-    if (loaded && startAnimation) {
-      // @ts-expect-error - this library is not typed
-      window.confetti.start();
-      timeout = setTimeout(() => {
-        // @ts-expect-error - this library is not typed
-        window.confetti.stop();
-        setStartAnimation(false);
-      }, duration);
-    }
-
     return () => {
       if (loaded) {
         // @ts-expect-error - This library is not typed
@@ -54,9 +40,19 @@ export const useConfetti = ({
       }
       clearTimeout(timeout);
     };
-  }, [loaded, startAnimation, duration]);
+  }, [loaded, timeout]);
 
-  const runAnimation = () => setStartAnimation(true);
+  const runAnimation = ({ duration = 3000 }: { duration?: number } = {}) => {
+    if (loaded) {
+      // @ts-expect-error - this library is not typed
+      window.confetti.start();
+      timeout = setTimeout(() => {
+        // @ts-expect-error - this library is not typed
+        window.confetti.stop();
+        // setStartAnimation(false);
+      }, duration);
+    }
+  };
 
   return { runAnimation };
 };
