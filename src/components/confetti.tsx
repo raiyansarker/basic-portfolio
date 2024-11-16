@@ -63,7 +63,11 @@ export function Confetti({ children }: PropsWithChildren) {
   return (
     <ConfettiContext.Provider value={{ loaded, setLoaded }}>
       {children}
-      <Script src="/js/confetti.js" onLoad={() => setLoaded(true)} />
+      <Script
+        strategy="lazyOnload"
+        src="https://cdn.jsdelivr.net/gh/raiyansarker/confetti@main/confetti.min.js"
+        onLoad={() => setLoaded(true)}
+      />
     </ConfettiContext.Provider>
   );
 }
