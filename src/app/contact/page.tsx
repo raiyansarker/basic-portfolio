@@ -46,6 +46,7 @@ export default function Contact() {
             <Input
               type="text"
               placeholder="First Name"
+              required
               {...form.register("firstName")}
             />
             <Input
