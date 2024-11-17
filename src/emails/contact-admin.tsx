@@ -68,7 +68,7 @@ export const ContactAdmin = ({
               </tr>
               <tr className="w-full">
                 <td className="font-medium">Sent</td>
-                <td>{format(date, "h:mm b, do MMM, yyy [z]")}</td>
+                <td>{format(date, "h:mm b, do MMM, yyy (x)")}</td>
               </tr>
               <tr className="w-full">
                 <td className="font-medium">IP</td>

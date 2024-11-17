@@ -45,7 +45,7 @@ export const ContactSender = ({ firstName }: ContactSenderProps) => (
           >
             {`# Dear **${firstName}**,
 
-Thank you for reaching out! I've received your message and will get back to you as soon as possible. If you have any urgent concerns, please feel free to reply to this email.
+Thank you for reaching out! I've received your message and will get back to you as soon as possible. If you have any further questions or concerns, please don't hesitate to reach out to me.
 
 Best regards,  
 Raiyan`}
@@ -54,8 +54,9 @@ Raiyan`}
           <br />
 
           <Text className="text-gray-950/65">
-            This is an automated email, please do not reply directly to this
-            message.
+            This is an automated email. You recieved this email because you
+            contacted me through my website. If you think this email was sent by
+            mistake, please ignore it.
           </Text>
         </Container>
       </Body>
