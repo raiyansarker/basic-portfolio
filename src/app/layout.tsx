@@ -120,7 +120,7 @@ export default function RootLayout({
                     alt="Raiyan"
                     width={200}
                     height={200}
-                    className="size-11 rounded-full"
+                    className="size-11 rounded-full ring-1 ring-gray-950/90 ring-offset-2 ring-offset-[var(--background)] dark:ring-white/30"
                   />
                   <div className="space-y-1">
                     <h1 className="flex items-center gap-x-2 text-lg font-semibold leading-none">
