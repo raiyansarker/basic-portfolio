@@ -22,6 +22,20 @@ export const metadata: Metadata = {
   },
   description:
     "Developer by trade, eternal student by choice. Specializing in creating robust, user-friendly applications while constantly expanding my technical horizons.",
+  icons: {
+    icon: [
+      {
+        media: "(prefers-color-scheme: light)",
+        url: "/favicon-black.png",
+        href: "/favicon-black.png",
+      },
+      {
+        media: "(prefers-color-scheme: dark)",
+        url: "/favicon-white.png",
+        href: "/favicon-white.png",
+      },
+    ],
+  },
   keywords: [
     "Raiyan Sarker",
     "Sarker Developer",
