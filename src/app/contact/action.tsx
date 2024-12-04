@@ -51,6 +51,7 @@ export const contactAction = actionClient.schema(contactFormSchema).action(
       ip: ip ?? "",
       message: parsedInput.message,
       subject: parsedInput.subject,
+      host: (await headers()).get("host") || "acme.local",
     } satisfies ContactAdminProps;
 
     // Mail to admin

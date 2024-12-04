@@ -12,10 +12,6 @@ import {
 } from "@react-email/components";
 import { format } from "date-fns";
 
-const baseUrl = process.env.VERCEL_URL
-  ? `https://${process.env.VERCEL_URL}`
-  : "http://localhost:3000";
-
 export interface ContactAdminProps {
   firstName: string;
   lastName: string;
@@ -24,6 +20,7 @@ export interface ContactAdminProps {
   message: string;
   date: number;
   ip: string;
+  host: string;
 }
 
 export const ContactAdmin = ({
@@ -34,6 +31,7 @@ export const ContactAdmin = ({
   message,
   date,
   ip,
+  host,
 }: ContactAdminProps) => (
   <Html>
     <Head />
@@ -91,7 +89,7 @@ export const ContactAdmin = ({
           <br />
 
           <Text className="text-gray-950/65">
-            This email is sent from {baseUrl}
+            This email is sent from {host}
           </Text>
         </Container>
       </Body>
@@ -107,6 +105,7 @@ ContactAdmin.PreviewProps = {
   message: "Hello, I have a query.",
   date: Date.now(),
   ip: "1.1.1.1",
+  host: "acme.local",
 } satisfies ContactAdminProps;
 
 export default ContactAdmin;
