@@ -51,6 +51,11 @@ export const contactAction = actionClient.schema(contactFormSchema).action(
     const head = await headers();
     const host = head.get("host") || "acme.local";
 
+    // check if host has quotes at the beginning and end
+    if (host[0] === '"' && host[host.length - 1] === '"') {
+      return;
+    }
+
     const adminEmailProps = {
       date: Date.now(),
       email: parsedInput.email,
